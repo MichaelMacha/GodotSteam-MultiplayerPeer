@@ -11,7 +11,7 @@ bool SteamConnection::operator ==(const SteamConnection &data) {
 
 EResult SteamConnection::raw_send(Packet* packet) {
     if(packet->channel == ChannelManagement::PING_CHANNEL) {
-        if(packet->size == sizeof(PingPayload)) {
+        if(packet->size != sizeof(PingPayload)) {
             Steam::get_singleton()->steamworksError("Error: This ping is the wrong size, rejecting");
             return k_EResultFail;
         }
