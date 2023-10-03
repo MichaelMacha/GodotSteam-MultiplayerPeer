@@ -8,5 +8,7 @@
 **/*.obj
 **/*.VC.db
 
+.vscode/
 bin/
 .sconsign.dblite
+godotsteam/sdk/**
